@@ -1,0 +1,112 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{main}
+\RequirePackage{fontspec,fancyvrb,titlesec,framed,fancyhdr}
+
+%\onehalfspacing
+
+\titleformat{\chapter}%
+	{\sffamily \Huge \bfseries}%
+	{}%
+	{.00\linewidth}%
+	{}[{\titlerule[1pt]}]
+
+\titleformat{\part}%
+	{\sffamily \Huge \bfseries}%
+	{}%
+	{.00\linewidth}%
+	{}[{\titlerule[1pt]}]
+
+\titleformat{\section}%
+	{\sffamily \LARGE \bfseries}%
+	{\thesection}%
+	{.03\linewidth}%
+	{}%[{\titlerule[2pt]}]
+
+\titleformat{\subsection}%
+	{\sffamily \Large \bfseries}%
+	{\thesubsection}%
+	{.03\linewidth}%
+	{}
+
+\titleformat{\subsubsection}%
+	{\sffamily \large \bfseries}%
+	{\thesubsubsection}%
+	{.03\linewidth}%
+	{}
+
+%\titlespacing{\part}{0mm}{5mm}{5mm}
+\titlespacing{\chapter}{0cm}{-1.5cm}{5mm}
+%\titlespacing{\section}{0mm}{5mm}{5mm}
+%\titlespacing{\subsection}{0mm}{5mm}{5mm}
+%\titlespacing{\subsubsection}{0pt}{5mm}{5mm}
+
+%\let\oldsection\section
+%\renewcommand\section{\newpage\oldsection}
+
+%% Serif font
+\setmainfont{Libertinus Serif}
+%\setmainfont{Source Serif Pro}
+%\setmainfont{Linux Libertine}
+
+%% Sans font
+\setsansfont{Libertinus Sans}
+%\setsansfont{Source Sans Pro}
+%\setsansfont{Libertinus Serif}
+%\setsansfont{Ubuntu}
+
+%% Monospace font
+\setmonofont{Fira Mono Medium}
+%\setmonofont{Ubuntu Mono}
+%\setmonofont{Source Code Pro}
+%\setmonofont{Inconsolata}
+%\setmonofont{DejaVu Sans Mono}
+%\setmonofont{Inconsolata Nerd Font}
+%\setmonofont{Source Code Variable}
+%\setmonofont{Sometype Mono Medium}
+%\setmonofont{Fira Code}
+%\setmonofont{Courier Prime Code}
+
+%% Add line number to code-blocks
+\DefineVerbatimEnvironment{Highlighting}%
+	{Verbatim}%
+	{commandchars=\\\{\},numbers=left}
+	%fontfamily=tt,
+	%baselinestretch=1.2,
+	%gobble=0,
+	%framerule=0mm,
+	%framesep=9mm,
+
+%% quotation
+\renewenvironment{quote}%
+	{\begin{center}\begin{quotation}\sffamily\noindent}
+	{\end{quotation}\end{center}}
+
+%\renewenvironment{quote}%
+	%{\begin{center}\begin{tabular}{|p{.8\textwidth}}\sffamily}%
+	%{\end{tabular}\end{center}}
+
+%%% Add gap to shaded env
+%\renewenvironment{Shaded}%
+	%{\begin{center}\begin{tabular}{p{.8\textwidth}}\begin{snugshade}}
+	%{\end{snugshade}\end{tabular}\end{center}}
+
+%%\ifcsname Shaded\endcsname
+\ifdefined\Shaded
+	\renewenvironment{Shaded}%
+		{\begin{quotation}\begin{snugshade}}
+		{\end{snugshade}\end{quotation}}
+\else
+	\newenvironment{Shaded}%
+		{\begin{quotation}\begin{snugshade}}
+		{\end{snugshade}\end{quotation}}
+\fi
+
+%% Add gap in verbatim
+\let\oldverbatim=\verbatim
+\let\oldendverbatim=\endverbatim
+\renewenvironment{verbatim}%
+	{\begin{center}\begin{tabular}{p{.8\textwidth}}\oldverbatim}%
+	{\oldendverbatim\end{tabular}\end{center}}
+
+%% Header line width
+\renewcommand{\headrulewidth}{0.0pt}

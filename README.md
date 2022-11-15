@@ -16,11 +16,11 @@ For generating Images, you need `ImageMagick` package.
 ### In Progress
 
 - [lua](lua)
+- [bash](bash)
+- [groff](groff)
 
 ### TODO
 
-- [bash](bash)
-- [groff](groff)
 - [latex](latex)
 - [markdown](markdown)
 - [python](python)
