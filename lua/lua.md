@@ -20,7 +20,7 @@ in a computer program. A programming language consists of two things: a syntax,
 which is like grammar in English, and libraries, basic functions provided with
 the language. These libraries could be compared with vocabulary in English.
 
-## Hello World! <!--{{{-->
+### Hello World! <!--{{{-->
 
 Lua can either be used embedded in an application or by itself.
 The first example of Lua code in this book will be the basic and traditional
@@ -45,7 +45,7 @@ which means that the print function will not always display text in an area that
 is visible to the user.
 
 <!--}}}-->
-## Comments <!--{{{-->
+### Comments <!--{{{-->
 
 A comment is a code annotation that is ignored by the programming language.
 Comments can be used to describe one or many lines of code, to document a program,
@@ -92,7 +92,7 @@ In the example above, the closing long bracket of level 0 (`]]`) does not close 
 but the closing long bracket of level 2 (`]==]`) does.
 
 <!--}}}-->
-## Syntax <!--{{{-->
+### Syntax <!--{{{-->
 
 The syntax of a programming language defines how statements and expressions must be
 written in that programming language, just like grammar defines how sentences and words
@@ -103,7 +103,7 @@ or many expressions to use that instruction with. For example, `3 + 5` is an exp
 `variable = 3 + 5` is a statement that sets the value of variable to that expression.
 
 <!--}}}-->
-## Obtaining Lua <!--{{{-->
+### Obtaining Lua <!--{{{-->
 
 Lua can be obtained on the official Lua website, on the download 
 [page](http://www.lua.org/download.html).
